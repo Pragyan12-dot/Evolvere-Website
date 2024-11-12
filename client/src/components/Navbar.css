@@ -1,0 +1,141 @@
+/* Basic Navbar styles */
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is on top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo a {
+    color: #fff;
+    font-size:1.7rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #f1c40f;
+  }
+  
+  /* Hamburger menu (for small screens) */
+  .hamburger {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  /* Transform the hamburger into a close icon */
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg); /* Top bar rotates */
+    position: relative;
+    top: 6px;
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0; /* Middle bar disappears */
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg); /* Bottom bar rotates */
+    position: relative;
+    top: -6px;
+  }
+  
+  /* Mobile Menu */
+  .nav-links {
+    list-style-type: none;
+    position: absolute;
+    top: 60px; /* Adjust top if logo is larger/smaller */
+    right: 0;
+    background-color: #333;
+    width: 70%; /* Set the width to 70% (you can adjust this to fit your design) */
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%); /* Initially hidden off-screen */
+    transition: transform 0.3s ease;
+    padding-top: 40px; /* Add some padding at the top for menu items */
+  }
+  
+  .nav-links.active {
+    transform: translateX(0); /* When menu is open, slide in */
+  }
+  
+  .nav-links li {
+    margin: 20px 0;
+  }
+  
+  .nav-links a {
+    font-size: 24px;
+    padding: 10px;
+  }
+  
+  @media (max-width:2560px) {
+    .nav-links {
+      position: absolute;
+      top: 60px; /* Adjust if logo is larger/smaller */
+      right: 0;
+      background-color: #333;
+      width: 50%; /* The width of the menu */
+      height:60vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(100%); /* Initially hidden off-screen */
+      transition: transform 0.3s ease;
+    }
+  
+    .nav-links.active {
+      transform: translateX(0); /* When menu is open, slide in */
+    }
+  
+    .nav-links li {
+      margin: 20px 0;
+    }
+  
+    .hamburger {
+      display: flex; /* Show hamburger on small screens */
+      padding-right:2rem;
+    }
+  }
+  
